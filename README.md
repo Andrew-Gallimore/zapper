@@ -19,12 +19,14 @@ Features the Zapper app will have that meet or surpass the current alternative i
 
 ## Devlogs:
 
-<details>
+<details open>
 <summary>
 Day 1 Log
 </summary> <br />
-
 Created the repo!
+  
+###
+  
 
 Added
 - `Host.html` and `Guest.html` files, with their own scripts for their different functionalities
@@ -33,6 +35,4 @@ Added
 
 Deleted
 - Nothing yet
-
-<details open>
 
