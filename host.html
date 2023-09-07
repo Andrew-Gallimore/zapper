@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapper HOST</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+</head>
+<body>
+    <h1>Zapper Host</h1>
+    <textarea id="editor"></textarea>
+</body>
+
+<!-- Inline script that has basic functions needed everywhere -->
+<script>
+    // Default namespaces that will get replaced if the library is there
+    var plugins;
+    var Portal;
+    
+    var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+    var eventer = window[eventMethod];
+    var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+    eventer(messageEvent, e => {
+        // If the portal library is set up
+        if(Portal) {
+            if(e.source === Portal.iframe.contentWindow) Portal.onMessage(e.data);
+        }
+    });
+    
+    function addURLParameter(parameter, value) {
+        window.history.pushState({}, '', '?' + parameter + '=' + value)
+    }
+</script>
+
+<!-- JS -->
+<script src="js/portal.js"></script>
+<script src="https://cdn.rawgit.com/muaz-khan/DetectRTC/master/DetectRTC.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+<script src="js/host-main.js"></script>
+</html>
