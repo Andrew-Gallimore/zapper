@@ -36,3 +36,19 @@ Added
 Deleted
 - Nothing yet
 
+
+<details open>
+<summary>
+Day 2 Log
+</summary> <br />
+Didn't do much.
+  
+###
+  
+
+Added
+- Nothing, but I did plan out how to possibly do authentication of people, so random people don't put random/bad names
+
+Deleted
+- Nothing yet
+
