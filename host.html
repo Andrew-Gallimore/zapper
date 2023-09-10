@@ -7,10 +7,84 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    <link rel="stylesheet" href="css/host.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css">
+    <link rel="stylesheet" href="css/scheme-theme.css">
 </head>
 <body>
-    <h1>Zapper Host</h1>
-    <textarea id="editor"></textarea>
+    <div class="main">
+        <div class="question-content">
+            <div class="top-menu">
+                <h1 class="question-label">QUESTION</h1>
+                <button onclick="easymdeVIEW.toolbarElements.preview.click()">
+                    <img width="96" height="96" src="https://img.icons8.com/536FFE/material-rounded/48/edit--v1.png" alt="edit--v1"/>
+                </button>
+            </div>
+            <textarea id="editor"></textarea>
+        </div>
+        <div class="right-boxes">
+            <div class="setting-options">
+                <button class="question-file">
+                    <img width="48" height="48" src="https://img.icons8.com/material-rounded/48/folder-invoices.png" alt="folder-invoices"/>
+                    <p>CS111 W4 Questions</p>
+                </button>
+                <button class="settings">
+                    <img width="48" height="48" src="https://img.icons8.com/material-rounded/48/settings.png" alt="settings"/>
+                </button>
+            </div>
+            <div class="main-controls">
+                <div class="steps">
+                    <div class="step left active">
+                        <div class="circle"></div>
+                        <p>INITIAL ANSWERS</p>
+                    </div>
+                    <div class="line active"></div>
+                    <div class="step middle">
+                        <div class="circle"></div>
+                        <p>DISCUSSION</p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step right">
+                        <div class="circle"></div>
+                        <p>FINAL ANSWERS</p>
+                    </div>
+                </div>
+                <select name="questions" id="questions">
+                    <option value="Q1">Question 1</option>
+                    <option value="Q2">Question 2</option>
+                    <option value="Q3">Question 3</option>
+                    <option value="Q4">Question 4</option>
+                </select>
+                <h1 class="current-step">Initial Answers</h1>
+                <div class="row">
+                    <div class="side time">
+                        <p>Time Open</p>
+                        <h2>1:07</h2>
+                    </div>
+                    <div class="center">
+                        <button class="active">
+                            <img class="pause" width="96" height="96" src="https://img.icons8.com/FFFFFF/material-rounded/96/pause.png" alt="pause"/>
+                            <img class="play" width="96" height="96" src="https://img.icons8.com/FFFFFF/material-rounded/96/play--v1.png" alt="play--v1"/>
+                        </button>
+                    </div>
+                    <div class="side responces">
+                        <p>Responces</p>
+                        <h2>8/42</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="joining">
+                <div class="text">
+                    <p>Join at <b>Zapper.com/join</b> or scan QR code</p>
+                    <h1>AV82BA91</h1>
+                </div>
+                <div id="qrcode">
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 <!-- Inline script that has basic functions needed everywhere -->
@@ -36,6 +110,11 @@
 
 <!-- JS -->
 <script src="js/portal.js"></script>
+<script src="js/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/scheme.min.js"></script>
+
 <script src="https://cdn.rawgit.com/muaz-khan/DetectRTC/master/DetectRTC.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
 <script src="js/host-main.js"></script>

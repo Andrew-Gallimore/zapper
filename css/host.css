@@ -1,0 +1,319 @@
+:root {
+    --color-primary: #FFC107;
+    --color-primary-dark: #FFA000;
+    --color-primary-light: #FFECB3;
+    --color-accent: #536FFE;
+    --color-accent-light: #5370fe56;
+    --color-unselected: #A7A7A7;
+    --color-selected: #555555;
+    --color-background: #FFFFFF;
+
+    --text-primary: #000000;
+    --text-secondary: #757575;
+    --text-secondary: #5b5b5b;
+
+    --btn-color-hover: #16156010;
+}
+
+/* Generic Element styles */
+p,
+pre {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+}
+h1 {
+    font-size: 2.4rem;
+    color: var(--text-primary);
+}
+h2 {
+    font-size: 2.1rem;
+    color: var(--text-primary);
+}
+h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+}
+select {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+}
+iframe {
+    display: none;
+}
+
+/* Body and first flexboxes */
+body {
+    background: var(--color-background);
+    margin: 0;
+    padding: 0;
+}
+body .main {
+    width: calc(100vw - 48px);
+    height: calc(100vh - 48px);
+    padding: 24px;
+
+    display: flex;
+    flex-direction: row;
+}
+.main .question-content {
+    flex-grow: 100;
+}
+.main .right-boxes {
+    width: 35%;
+    max-width: 540px;
+    min-width: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 16px;
+}
+
+/* Right Boxes Content */
+.right-boxes .setting-options {
+    display: flex;
+    flex-direction: row;
+}
+.setting-options img {
+    width: 40px;
+    height: 40px;
+}
+.setting-options button {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.setting-options .question-file img {
+    margin-right: 8px;
+}
+.setting-options .settings {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+.right-boxes .main-controls {
+    background: var(--color-primary-light);
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-controls .steps {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    /* justify-content: space-between; */
+}
+.main-controls .step {
+    width: 35px;
+    display: flex;
+    flex-direction: column;
+}
+.main-controls .step .circle {
+    background: var(--color-unselected);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.main-controls .step.active .circle {
+    background: var(--color-accent);
+}
+.main-controls .step p {
+    width: fit-content;
+}
+.main-controls .step.middle p {
+    align-self: center;
+    text-align: center;
+}
+.main-controls .step.right p {
+    align-self: flex-end;
+    text-align: end;
+}
+.main-controls .steps .line {
+    flex-grow: 100;
+    height: 4px;
+    background: var(--color-unselected);
+    margin-top: 17px;
+}
+.main-controls .steps .line.active {
+    background: var(--color-selected);
+}
+
+.main-controls select {
+    margin-top: 16px;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.main-controls .current-step {
+    margin-top: 4px;
+}
+
+.main-controls .row {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+}
+.main-controls .row p {
+    margin-bottom: 0;
+}
+.main-controls .row h2 {
+    margin-top: 4px;
+}
+.main-controls .side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main-controls .center {
+    margin: 0 24px;
+}
+.main-controls .center button {
+    position: relative;
+    background: var(--color-primary);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    width: 125px;
+    height: 125px;
+    transition: box-shadow 0.3s;
+    box-shadow: 0.5px 1px 2px rgba(0, 0, 0, 0);
+}
+.main-controls .center button:hover {
+    box-shadow: 0.5px 4px 6px rgba(0, 0, 0, 0.434);
+}
+.main-controls .center button img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 90px;
+    height: 90px;
+}
+.main-controls .center button.active img.pause {
+    display: none;
+}
+.main-controls .center button:not(.active) img.play {
+    display: none;
+}
+
+.right-boxes .joining {
+    background: var(--color-primary-light);
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+}
+.joining img {
+    margin-left: 8px;
+    height: 150px;
+    width: 150px;
+}
+.joining .text {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: 0;
+}
+.joining p {
+    margin-top: 0;
+}
+.joining h1 {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+
+
+/* Left big box, with the questions and editor inside it */
+.question-content {
+    padding: 24px;
+    border: solid 4px var(--color-accent-light);
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+}
+.question-content .top-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.question-content .top-menu .question-label {
+    margin: 0;
+    color: var(--color-accent);
+}
+.question-content .top-menu button {
+    background: none;
+    border: none;
+    border-radius: 4px;
+    translate: 0 3px;
+    cursor: pointer;
+}
+.question-content .top-menu button img {
+    width: 26px;
+    height: 26px;
+    animation: none;
+}
+.question-content .top-menu button:hover img {
+    animation: draw 0.8s ease-out;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+@keyframes draw {
+    0% {
+        transform: translateX(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateX(-5px) rotate(-35deg);
+    }
+    66% {
+        transform: translate(5px) rotate(-20deg);
+    }
+    100% {
+        transform: translate(0px) rotate(0deg);
+    }
+}
+.question-content .editor-toolbar {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+.question-content .editor-toolbar:not(.fullscreen).disabled-for-preview {
+    display: none;
+}
+.question-content .EasyMDEContainer {
+    flex-grow: 100;
+    display: flex;
+    flex-direction: column;
+}
+.question-content .CodeMirror {
+    flex-grow: 100;
+    border: none;
+}
+
+.question-content .editor-preview-full {
+    background: var(--color-background);
+}
+
+.question-content .editor-preview .answer {
+    display: flex;
+    flex-direction: row;
+}
+.question-content .editor-preview .answer-label {
+    color: var(--color-accent);
+    margin-top: 20px;
+    margin-right: 8px;
+}
+.question-content .editor-preview .answer-child {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

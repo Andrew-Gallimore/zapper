@@ -1,0 +1,13 @@
+.language-scheme.hljs {
+    color: rgb(56, 56, 56);
+    background: rgb(245, 245, 245);
+}
+.language-scheme .hljs-comment {
+    color: rgb(232, 150, 63);
+}
+.language-scheme .hljs-name {
+    color: #33608e;
+}
+.language-scheme .hljs-string {
+    color: #31a354;
+}
